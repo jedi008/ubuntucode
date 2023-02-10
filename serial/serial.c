@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 				n_receive_byte = 0;
 				memset(bufferCommand, '\0', RCommandLen);
 				printf("error!!!\n");
-				char data[8] = {0xaa, 0xaa, 0x07, 0x02, 0x00, (char)r, 0xee, 0xee};
+				char data[8] = {0xaa, 0xaa, 0x08, 0x02, 0x00, (char)r, 0xee, 0xee};
 				write(fd,data,8);
 			}
         }
@@ -196,14 +196,14 @@ char command_handle(int fd, char bufferCommand[RCommandLen])
 	case 1:
 	{
 		printf("start\n");
-		char data[8] = {0xaa, 0xaa, 0x07, 0x01, 0x00, (char)type, 0xee, 0xee};
+		char data[8] = {0xaa, 0xaa, 0x08, 0x01, 0x00, (char)type, 0xee, 0xee};
 		write(fd,data,8);
 	}
 		break;
 	case 2:
 	{
 		printf("stop\n");
-		char data[8] = {0xaa, 0xaa, 0x07, 0x01, 0x00, (char)type, 0xee, 0xee};
+		char data[8] = {0xaa, 0xaa, 0x08, 0x01, 0x00, (char)type, 0xee, 0xee};
 		write(fd,data,8);
 	}
 		break;
