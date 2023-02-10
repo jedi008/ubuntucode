@@ -16,8 +16,6 @@ char command_handle(int fd, char bufferCommand[RCommandLen]);
 
 int check_end(int n_receive_byte, char* bufferCommand);
 
-int write_bytes(int fd, int len, char* data);
-
 
 int main(int argc, char *argv[])
 {
@@ -251,13 +249,4 @@ int check_end(int n_receive_byte, char* bufferCommand)
 	}
 
 	return 5;
-}
-
-int write_bytes(int fd, int len, char* data)
-{
-	for(int i=0;i<len;i++)
-	{
-		write(fd,data+i,1);
-	}
-	
 }
